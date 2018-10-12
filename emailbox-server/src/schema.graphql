@@ -2,8 +2,13 @@
 
 type Query {
 	info: String!
-	feed: [Email!]!
+	feed(filter: String, skip: Int, first: Int, orderBy: EmailOrderByInput): Feed!
 	email(id: ID!): Email
+}
+
+type Feed {
+  emails: [Email!]!
+  count: Int!
 }
 
 type Mutation {
@@ -17,6 +22,10 @@ type Mutation {
 	signup(emailAddress: String!, password: String!): AuthPayload
 
 	login(emailAddress: String!, password: String!): AuthPayload
+}
+
+type Subscription {
+  newEmail: EmailSubscriptionPayload
 }
 
 type AuthPayload {

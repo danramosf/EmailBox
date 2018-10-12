@@ -1,8 +1,4 @@
-# The HTTP endpoint for the Prisma API
-#endpoint: ''
-endpoint: https://localhost:4466/EmailBox/dev
-#https://us1.prisma.sh/danramosf-4007cb/database/dev
-
+#endpoint: endpoint: https://localhost:4466/EmailBox/dev
 # Points to the file that holds the data model
 datamodel: datamodel.graphql
 

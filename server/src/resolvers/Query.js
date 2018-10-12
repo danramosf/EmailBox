@@ -4,13 +4,13 @@ async function feed(parent, args, ctx, info) {
     ? { OR: [{ url_contains: filter }, { description_contains: filter }] }
     : {}
 
-  const allEmails = await ctx.db.query.emails({})
-  const count = allEmails.length
+  const allLinks = await ctx.db.query.links({})
+  const count = allLinks.length
 
-  const queriedEmails = await ctx.db.query.emails({ first, skip, where })
+  const queriedLinkes = await ctx.db.query.links({ first, skip, where })
 
   return {
-    emailIds: queriedEmails.map(email => email.id),
+    linkIds: queriedLinkes.map(link => link.id),
     count
   }
 }

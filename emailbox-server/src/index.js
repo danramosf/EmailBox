@@ -5,13 +5,17 @@ const { GraphQLServer } = require('graphql-yoga')
 //Importing the resolvers
 const Query = require('./resolvers/Query')
 const Mutation = require('./resolvers/Mutation')
+const Subscription = require('./resolvers/Subscription')
 const AuthPayload = require('./resolvers/AuthPayload')
+const Feed = require('./resolvers/Feed')
 
 // Resolvers
 const resolvers = {
 	Query,
 	Mutation,
-	AuthPayload
+	Subscription,
+	AuthPayload,
+	Feed,
 }
 
 // Bundles the schema and the resolvers and sends it to the server
