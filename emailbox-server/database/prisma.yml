@@ -1,4 +1,4 @@
-#endpoint: endpoint: https://localhost:4466/EmailBox/dev
+#endpoint: 
 # Points to the file that holds the data model
 datamodel: datamodel.graphql
 
@@ -9,3 +9,5 @@ secret: mysecret123
 hooks:
   post-deploy:
     - graphql get-schema --project database
+
+endpoint: https://us1.prisma.sh/danramosf-4007cb/database/dev

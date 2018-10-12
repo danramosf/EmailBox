@@ -9,3 +9,5 @@
 
 <p>The client was built using the Apollo Client GraphQL client.</p>
 <p>The server was built using the graphql-yoga GraphQL server and Prisma as a GraphQL database API layer</p>
+<br/>
+<p>Set up the database connection settings on the file /emailbox-server/docker-compose.yml</p>
