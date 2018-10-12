@@ -1,0 +1,15 @@
+type Email {
+  id: ID! @unique
+  content: String!
+  subject: String!
+  read: Boolean!
+  sentBy: String!
+  sentTo: User
+}
+
+type User {
+	id: ID! @unique
+	emailAddress: String! @unique
+	password: String!
+	emails: [Email!]!
+}

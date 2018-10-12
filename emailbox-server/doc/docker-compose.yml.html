@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>docker-compose.yml</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="doc-style.css" />
+  <script src="doc-filelist.js"></script>
+  <script>
+    var relativeDir = "";
+    var thisFile = "docker-compose.yml";
+    var defaultSidebar = true;
+  </script>
+  <script src="doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>docker-compose.yml</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3'</span>
+<span class="hljs-attr">services:</span>
+<span class="hljs-attr">  prisma:</span>
+<span class="hljs-attr">    image:</span> <span class="hljs-string">prismagraphql/prisma:1.8</span>
+<span class="hljs-attr">    restart:</span> <span class="hljs-string">always</span>
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-string">"4466:4466"</span>
+<span class="hljs-attr">    environment:</span>
+<span class="hljs-attr">      PRISMA_CONFIG:</span> <span class="hljs-string">|
+</span><span class="hljs-attr">        port:</span> <span class="hljs-number">4466</span>
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>uncomment the next line and provide the env var PRISMA_MANAGEMENT_API_SECRET=my-secret to activate cluster security
+managementApiSecret: my-secret</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="yaml"><span class="hljs-attr">        databases:</span>
+<span class="hljs-attr">          default:</span>
+<span class="hljs-attr">            connector:</span> <span class="hljs-string">mysql</span>
+<span class="hljs-attr">            host:</span> <span class="hljs-string">localhost</span>
+<span class="hljs-attr">            port:</span> <span class="hljs-number">3306</span>
+<span class="hljs-attr">            user:</span> <span class="hljs-string">Admin</span>
+<span class="hljs-attr">            password:</span> <span class="hljs-number">9</span><span class="hljs-string">rDR7dLy5+-</span>
+<span class="hljs-attr">            migrations:</span> <span class="hljs-literal">true</span>
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

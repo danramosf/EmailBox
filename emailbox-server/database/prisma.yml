@@ -1,0 +1,15 @@
+# The HTTP endpoint for the Prisma API
+#endpoint: ''
+endpoint: https://localhost:4466/EmailBox/dev
+#https://us1.prisma.sh/danramosf-4007cb/database/dev
+
+# Points to the file that holds the data model
+datamodel: datamodel.graphql
+
+#You can access the API when providing JWTs that are signed with this secret
+secret: mysecret123
+
+# Deploy hook
+hooks:
+  post-deploy:
+    - graphql get-schema --project database

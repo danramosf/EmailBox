@@ -1,0 +1,31 @@
+# import Email from "./generated/prisma.graphql"
+
+type Query {
+	info: String!
+	feed: [Email!]!
+	email(id: ID!): Email
+}
+
+type Mutation {
+
+	post(content: String!, subject: String!, read: Boolean!, sentBy: String!): Email!
+
+	updateEmailRead(emailId: ID!, read: Boolean!): Email
+
+	deleteEmail(id: ID!): Email!
+
+	signup(emailAddress: String!, password: String!): AuthPayload
+
+	login(emailAddress: String!, password: String!): AuthPayload
+}
+
+type AuthPayload {
+	token: String
+	user: User
+}
+
+type User {
+	id: ID!
+	emailAddress: String!
+	emails: [Email!]!
+}
