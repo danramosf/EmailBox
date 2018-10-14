@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const { APP_SECRET, getUserId, findObjectByKey } = require('../utils')
+const { APP_SECRET, getUserId } = require('../utils')
 
 async function signup(parent, args, context, info) {
 	//Encrpyting the user's password using bcrypt
@@ -58,13 +58,20 @@ function post(parent, args, context, info){
 	}, info,)
 }
 
-function updateEmailRead(_, { emailId, read }) { 
-	const email = findObjectByKey(emails, "id", emailId ); 
-	if (!email) {
-		throw new Error(`Couldn’t find email with id ${emailId}`);
-	}
-	email.read = read; 
-	return email;
+function updateEmailRead(parent, args, context, info) { 
+	
+	const userId = getUserId(context)
+	return context.db.mutation.updateEmail(
+	{
+		data:
+		{
+			read: args.read
+		},
+		where:
+		{
+			id: args.emailId
+		},
+	}, info,)
 }
 
 module.exports = {
