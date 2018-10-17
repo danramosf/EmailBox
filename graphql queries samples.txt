@@ -1,0 +1,60 @@
+mutation {
+  post(
+    content: "testing",
+    subject: "Subject 002",
+    read: false,
+    sentBy: "test@domain.ca"
+  ){
+    id
+  }
+}
+
+
+query{
+	feed {
+  	emails {
+      id
+      subject
+    }
+	}
+}
+
+
+mutation {
+  login(
+    emailAddress: "danramosf@gmail.com"
+    password: "test123"
+  ){
+    token
+    user{
+      id
+    }
+  }
+}
+
+
+Login's response:
+
+{
+  "data": {
+    "login": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjam40YWR6YWI0aDM0MGI3NzNhcDhrZGw3IiwiaWF0IjoxNTM5NTQ2NTU4fQ.x0xPEK8Za2GZz0Ffo9hvVBx--XBUhULjNzupKW4cC3Q",
+      "user": {
+        "id": "cjn4adzab4h340b773ap8kdl7"
+      }
+    }
+  }
+}
+
+
+update email read:
+
+mutation{
+  updateEmailRead (
+    emailId:"cjn9ag80knlp70b77oswhm1eb", 
+    read: true
+  ){
+    id
+    read
+  }
+}
