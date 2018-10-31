@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import EmailList from './EmailList'
 import CreateEmail from './CreateEmail'
+import Login from './Login'
 
 class App extends Component {
   render() {
     return (
     <div>
-    	<CreateEmail />
-    	<EmailList />
+    	<Login />
     </div>
     )
   }
